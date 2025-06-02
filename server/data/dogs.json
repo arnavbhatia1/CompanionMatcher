@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "name": "Buddy",
+      "breed": "Labrador Retriever",
+      "size": "Large",
+      "color": "Yellow",
+      "age": 4,
+      "temperament": ["Friendly", "Active"],
+      "shelter": "Atlanta Humane Society"
+    },
+    {
+      "id": 2,
+      "name": "Luna",
+      "breed": "German Shepherd",
+      "size": "Large",
+      "color": "Black/Tan",
+      "age": 3,
+      "temperament": ["Protective", "Smart"],
+      "shelter": "LifeLine DeKalb"
+    }
+]
