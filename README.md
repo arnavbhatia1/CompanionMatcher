@@ -1,22 +1,45 @@
 # Companion Matcher
 
+## Prerequisites
+
+Node.js - 18.x (includes npm)
+
+## Get Code
+
+git clone <your‑repo‑url> dog‑companion‑matcher
+cd dog‑companion‑matcher
+
 ## Install deps
 
-cd server && npm i
-cd ../client && npm i
+Run installation for each sub-projects and keep the terminal sopen after completion for the next step
 
-## Run the client and server on two terminals:
+### Terminal 1 – back‑end deps
 
-### Terminal 1
+cd server
+npm install
 
-cd server && npm run dev
+### Terminal 2 – front‑end deps
 
-### Terminal 2
+cd client
+npm install
 
-cd client && npm run dev
+## Start the Servers
 
-The React app will hot‑reload on localhost:5173, calling the API on localhost:4000.
+### Terminal 1 - API
 
-## TODO
+npm run dev
+- If you want to testt he health of the host: curl http://localhost:4000/api/health
+
+### Terminal 2 - React
+
+npm run dev
+
+## SMmke Test the MVP
+
+- Enter a few traits (Labrador, Large, Friendly).
+- Click “Find Matches.”
+- You should see sample Atlanta dogs ranked with a % score. For right now, the dog data is hard coded, so navigate to dogs.json, add/edit entries, and save. Smoke test again!
+
+## TODO (For Developers)
 
 CUrrently, I have just hardcoded two dogs and tehir metadata. I need to add real data from shelters through public APIs like from Petfinder API or Atlanta shelter RSS feeds!
