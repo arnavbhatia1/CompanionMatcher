@@ -365,9 +365,3 @@ Need help?
 - **Atlanta shelters** for their animal welfare work
 - **placedog.net** for demo placeholders
 - **Open source community** for tools and libraries
-
----
-
-**Made with ❤️ for Atlanta's adoptable pets**
-
-No API keys. No AI costs. Just smart matching.
