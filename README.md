@@ -37,12 +37,10 @@ cd ../client
 npm run dev
 ```
 
-Open `http://localhost:5173` and start searching with 60 realistic demo dogs!
-
 ## Why Choose Companion Matcher?
 
 ### No Configuration Needed
-- **Demo mode enabled by default** - works immediately
+- **Demo mode enabled by default**
 - No API keys, no signup, no configuration
 - Perfect for development, testing, and demonstrations
 
@@ -64,11 +62,6 @@ Demo mode includes real organizations:
 - Fulton County Animal Services
 - PAWS Atlanta
 - Angels Among Us Pet Rescue
-
-## Prerequisites
-
-- **Node.js** - Version 18.x or higher (includes npm)
-- **Optional**: RescueGroups.org API key for real shelter data
 
 ## Data Source Options
 
@@ -157,18 +150,6 @@ Click "View Details" for:
 
 ## API Endpoints
 
-### Health Check
-```bash
-GET /api/health
-# Returns: status, data source, cached dogs count
-```
-
-### Get Data Source Info
-```bash
-GET /api/datasource
-# Returns: current data source, description, configuration status
-```
-
 ### Refresh Dogs
 ```bash
 GET /api/dogs/refresh
@@ -199,32 +180,7 @@ Content-Type: application/json
 }
 ```
 
-## Project Structure
-
-```
-companion-matcher/
-├── server/                   # Backend Express API
-│   ├── index.js             # Main server
-│   ├── services/
-│   │   ├── dataService.js   # Unified data source manager
-│   │   ├── demoData.js      # Demo mode generator
-│   │   └── rescueGroups.js  # RescueGroups API integration
-│   ├── utils/
-│   │   └── matcher.js       # Intelligent matching algorithm
-│   ├── data/
-│   │   └── dogs.json        # Fallback data
-│   └── .env                 # Configuration
-│
-└── client/                  # Frontend React app
-    ├── src/
-    │   ├── App.jsx          # Main app
-    │   └── components/
-    │       ├── TraitsForm.jsx      # Search form
-    │       └── MatchResults.jsx    # Results display
-    └── package.json
-```
-
-## Intelligent Matching Explained
+## Model Explained
 
 ### How It Works
 
@@ -264,56 +220,6 @@ companion-matcher/
 - Environment: Good with kids = Yes → 100% × 10% = 10
 - **Total: 37 points out of 37 possible = 100% match**
 
-## Troubleshooting
-
-### Server won't start
-```bash
-cd server
-node --check index.js  # Check for syntax errors
-npm install             # Reinstall dependencies
-```
-
-### "No data available" error
-- Check server logs in Terminal 1
-- Make sure server is on port 4000
-- Try: `curl http://localhost:4000/api/health`
-- Manually refresh: `curl http://localhost:4000/api/dogs/refresh`
-
-### Images not loading
-- Demo mode uses placedog.net for placeholders
-- If that service is down, images won't load (expected behavior)
-- Real APIs provide actual pet photos
-
-### No results from search
-- Try less restrictive criteria
-- Use free text search for natural language
-- Check server logs for errors
-
-### Port already in use
-```bash
-# Find and kill process on port 4000
-lsof -ti:4000 | xargs kill -9
-
-# Or use a different port in .env
-PORT=5000
-```
-
-## Technology Stack
-
-### Backend
-- **Node.js** with Express
-- **RescueGroups API** (optional)
-- Pure JavaScript matching algorithm (no external dependencies)
-
-### Frontend
-- **React 18**
-- **Vite** (build tool)
-- **Tailwind CSS** (styling)
-
-## Contributing Atlanta Shelters
-
-Want to help add more shelter integrations? We'd love contributions!
-
 **Target shelters:**
 - Atlanta Humane Society (API/RSS feed?)
 - LifeLine Animal Project (direct integration)
@@ -328,13 +234,6 @@ Want to help add more shelter integrations? We'd love contributions!
 3. Add to data service router
 4. Submit PR with documentation
 
-## Performance
-
-- **Search speed**: <50ms for 100 dogs
-- **Memory usage**: ~50MB for server
-- **Cache duration**: 1 hour (configurable)
-- **Concurrent requests**: Unlimited (Node.js async)
-
 ## Future Enhancements
 
 - [ ] Direct shelter API integrations
@@ -346,18 +245,6 @@ Want to help add more shelter integrations? We'd love contributions!
 - [ ] Social sharing
 - [ ] Admin dashboard for shelters
 - [ ] Real-time availability updates
-
-## License
-
-MIT License - free for any use
-
-## Support
-
-Need help?
-- Check Troubleshooting section
-- Review server logs (Terminal 1)
-- Check browser console (F12)
-- Open GitHub issue
 
 ## Acknowledgments
 
